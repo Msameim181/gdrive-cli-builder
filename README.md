@@ -1,3 +1,5 @@
+[![Build GDrive CLI](https://github.com/Msameim181/gdrive-cli-builder/actions/workflows/build.yml/badge.svg)](https://github.com/Msameim181/gdrive-cli-builder/actions/workflows/build.yml)
+
 # GDrive CLI Builder
 [GDrive CLI](https://github.com/gdrive-org/gdrive) is a great tools, but because the owner is hardcoded the credentials directly to the [code](https://github.com/prasmussen/gdrive/blob/c3cbcceedd6beb1fcff30f06ea7be7c29558d181/handlers_drive.go#L17), it's makes every one who use the [release package](https://github.com/gdrive-org/gdrive/releases) from this project is sharing the same quota. So i try to make this repository to help who want to build the package using their own credentials.
 
