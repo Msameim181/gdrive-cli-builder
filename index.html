@@ -4,10 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <title>Google API Code Extractor</title>
 </head>
 <body>
     <!-- Print JS scrip output here -->
+    <div id="input">
+        <h1>Google API Code Extractor</h1>
+        <p>Enter the URL of the Google API page you want to extract the code from.</p>
+        <!-- and input and a submit to get input with js -->
+        <input type="text" id="url" placeholder="Enter URL">
+        <button id="submit">Submit</button>
+        
+    </div>
     <div id="output">
         <h1>Google API Code Extractor</h1>
         <p>The Clean URL: "<span id="clean_url"></span>"</p>
@@ -39,13 +48,35 @@
             if (!parms.hasOwnProperty(n)) parms[n] = [];
             parms[n].push(nv.length === 2 ? v : null);
         }
-        return {'url': decodeURIComponent(window.location.href), 'parms': parms};
+        return {'url': decodeURIComponent(url), 'parms': parms};
     }
-    var url = parseURLParams(window.location.href);
-    document.getElementById("clean_url").innerHTML = url.url;
-    document.getElementById("code").innerHTML = url.parms.code;
-    document.getElementById("state").innerHTML = url.parms.state;
-    document.getElementById("scope").innerHTML = url.parms.scope;
+    // // Get URL from input
+    // var url = document.getElementById('url').value;
+    // var url = parseURLParams(url);
+    // document.getElementById("clean_url").innerHTML = url.url;
+    // document.getElementById("code").innerHTML = url.parms.code;
+    // document.getElementById("state").innerHTML = url.parms.state;
+    // document.getElementById("scope").innerHTML = url.parms.scope;
+
+    // when the submit button is clicked
+    // get the value of the input field
+    // use ParseURLParams to get the URL parameters
+    // print the values to the page in the output div
+
+    $(document).ready(function(){
+        $("#submit").click(function(){
+            var url = document.getElementById('url').value;
+
+            console.log(url);
+            var url = parseURLParams(url);
+            document.getElementById("clean_url").innerHTML = url.url;
+            document.getElementById("code").innerHTML = url.parms.code;
+            document.getElementById("state").innerHTML = url.parms.state;
+            document.getElementById("scope").innerHTML = url.parms.scope;
+            document.getElementById('url').value = "";
+        });
+    });
+
 
 
 </script>
