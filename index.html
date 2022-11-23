@@ -12,19 +12,14 @@
     <div id="input">
         <h1>Google API Code Extractor</h1>
         <p>Enter the URL of the Google API page you want to extract the code from.</p>
-        <!-- and input and a submit to get input with js -->
         <input type="text" id="url" placeholder="Enter URL">
         <button id="submit">Submit</button>
         
     </div>
     <div id="output">
-        <h1>Google API Code Extractor</h1>
         <p>The Clean URL: "<span id="clean_url"></span>"</p>
-        <br>
         <p>The Code: "<span id="code"></span>"</p>
-        <br>
         <p>The State: "<span id="state"></span>"</p>
-        <br>
         <p>The Scope: "<span id="scope"></span>"</p>
     </div>
 
@@ -50,18 +45,6 @@
         }
         return {'url': decodeURIComponent(url), 'parms': parms};
     }
-    // // Get URL from input
-    // var url = document.getElementById('url').value;
-    // var url = parseURLParams(url);
-    // document.getElementById("clean_url").innerHTML = url.url;
-    // document.getElementById("code").innerHTML = url.parms.code;
-    // document.getElementById("state").innerHTML = url.parms.state;
-    // document.getElementById("scope").innerHTML = url.parms.scope;
-
-    // when the submit button is clicked
-    // get the value of the input field
-    // use ParseURLParams to get the URL parameters
-    // print the values to the page in the output div
 
     $(document).ready(function(){
         $("#submit").click(function(){
