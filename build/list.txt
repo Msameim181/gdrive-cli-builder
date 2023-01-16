@@ -1,2 +1,3 @@
 linux/386
 windows/386
+linux/amd64
